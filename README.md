@@ -1,4 +1,4 @@
-# django-fakebotdetector 
+# django-fake-bot-detector 
 
 Detect and block fake search bots 🤖
 
