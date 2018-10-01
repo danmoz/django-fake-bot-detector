@@ -13,7 +13,13 @@ the request IP and checking the returned domain matches the expected domain
 
 ## Installation
 
-Add the middleware:
+Install from PyPI:
+
+```
+pip install django-fake-bot-detector
+```
+
+Add the middleware in `settings.py`:
 
 ```
 MIDDLEWARE = [
@@ -39,7 +45,7 @@ NGINX close the connection immediately without sending an HTTP response at all.
 
 A `fake_bot_hit` signal is sent every time the middleware blocks a bot.
 
-To listen for the signal, simply set up a receiver:
+To listen for the signal, set up a receiver:
 
 ```
 from django.dispatch import receiver
