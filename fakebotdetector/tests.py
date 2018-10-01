@@ -5,7 +5,7 @@ from django.conf import settings
 
 settings.configure()
 
-from middleware import FakeBotDetectorMiddleware
+from fakebotdetector.middleware import FakeBotDetectorMiddleware
 
 
 class Mock:

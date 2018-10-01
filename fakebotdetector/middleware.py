@@ -5,7 +5,7 @@ from ipaddress import ip_address
 from django.conf import settings
 from django.http import HttpResponse
 
-from signals import fake_bot_hit
+from fakebotdetector.signals import fake_bot_hit
 
 
 class FakeBotDetectorMiddleware:
