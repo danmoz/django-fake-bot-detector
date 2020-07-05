@@ -25,8 +25,9 @@ class FakeBotDetectorMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        if self.FAKE_BOT_DETECTOR_ENABLED:
-            user_agent = request.META.get('HTTP_USER_AGENT')
+        user_agent = request.META.get('HTTP_USER_AGENT')
+
+        if user_agent and self.FAKE_BOT_DETECTOR_ENABLED:
             matched_sigs = [sig for sig in self.BOTS if sig[0].lower() in user_agent.lower()]
 
             # ignore the result unless precisely one signature matches

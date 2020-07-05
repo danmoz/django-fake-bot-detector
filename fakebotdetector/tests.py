@@ -41,7 +41,11 @@ class MiddlewareTests(TestCase):
     def test_raise_if_remote_addr_missing(self):
         self.request.META.pop('REMOTE_ADDR')
         with self.assertRaises(RuntimeError):
-            response = self.middleware.__call__(self.request)
+            self.middleware.__call__(self.request)
+
+    def test_ignore_missing_user_agent(self):
+        self.request.META['HTTP_USER_AGENT'] = None
+        self.middleware.__call__(self.request)
 
     def test_setting_enabled(self):
         self.middleware.reverse_lookup = lambda x: 'fake.bot.domain.com'
