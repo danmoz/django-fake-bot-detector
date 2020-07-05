@@ -11,6 +11,11 @@ Fortunately the major search bots are all verifiable by performing a reverse DNS
 the request IP and checking the returned domain matches the expected domain 
 (e.g. `crawl-66-249-66-1.googlebot.com`). This simple middleware for Django does exactly that.
 
+## Requirements:
+
+* Python 2.7+, 3.0+
+* Django 1.11+, 2.0+, 3.0+
+
 ## Installation
 
 Install from PyPI:
