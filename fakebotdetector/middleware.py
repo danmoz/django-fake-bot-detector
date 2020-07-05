@@ -36,7 +36,7 @@ class FakeBotDetectorMiddleware:
                 # get the request IP
                 client_ip = request.META.get('REMOTE_ADDR')
                 if not client_ip:
-                    raise RuntimeError("django-killbot cannot check any client IP addresses because "
+                    raise RuntimeError("django-fake-bot-detector cannot check any client IP addresses because "
                                        "request.META['REMOTE_ADDR'] is missing, your webserver may be misconfigured.")
 
                 if not self.ipaddress_is_private(client_ip):
